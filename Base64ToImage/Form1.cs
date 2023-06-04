@@ -71,6 +71,18 @@ namespace Base64ToImage
                     //MessageBox.Show(ImageService.ImageType(pictureBox1.Image));
 
                     btnBrowse.Enabled = true;
+
+                    dataGridView1.ColumnCount = 3;
+                    dataGridView1.Columns[0].DefaultCellStyle.ForeColor = Color.DarkBlue;
+                    dataGridView1.Columns[0].DefaultCellStyle.Font = new Font(this.Font, FontStyle.Bold);
+                    dataGridView1.Columns[1].DefaultCellStyle.ForeColor = Color.Blue;
+
+                    dataGridView1.Rows.Clear();
+                    dataGridView1.Rows.Add(new string[] { "Width", imgElement.Width.ToString(), "" });
+                    dataGridView1.Rows.Add(new string[] { "Height", imgElement.Height.ToString(), "" });
+                    dataGridView1.Rows.Add(new string[] { "Extension", imgElement.ImgExtension.ToUpper(), "" });
+                    dataGridView1.Rows.Add(new string[] { "HResolution", imgElement.img.HorizontalResolution.ToString(), "Horizontal Resolution" });
+                    dataGridView1.Rows.Add(new string[] { "VResolution", imgElement.img.HorizontalResolution.ToString(), "Vertical Resolution" });
                 }
             }
             

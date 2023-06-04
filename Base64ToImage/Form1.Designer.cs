@@ -43,7 +43,12 @@ namespace Base64ToImage
             this.btnClear = new System.Windows.Forms.Button();
             this.btnProcess = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtInput
@@ -83,7 +88,7 @@ namespace Base64ToImage
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(21, 285);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 201);
+            this.pictureBox1.Size = new System.Drawing.Size(153, 220);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -177,12 +182,51 @@ namespace Base64ToImage
             this.btnProcess.UseVisualStyleBackColor = true;
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colName,
+            this.colValue,
+            this.colRemark});
+            this.dataGridView1.Location = new System.Drawing.Point(202, 355);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(710, 150);
+            this.dataGridView1.TabIndex = 12;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Name";
+            this.colName.MaxInputLength = 0;
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
+            this.colName.Width = 150;
+            // 
+            // colValue
+            // 
+            this.colValue.HeaderText = "Value";
+            this.colValue.MaxInputLength = 0;
+            this.colValue.MinimumWidth = 6;
+            this.colValue.Name = "colValue";
+            this.colValue.Width = 175;
+            // 
+            // colRemark
+            // 
+            this.colRemark.HeaderText = "Remark";
+            this.colRemark.MaxInputLength = 0;
+            this.colRemark.MinimumWidth = 6;
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Width = 150;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(935, 546);
+            this.ClientSize = new System.Drawing.Size(935, 533);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnProcess);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtLength);
@@ -201,6 +245,7 @@ namespace Base64ToImage
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Base64ToImage by p0$e!c|()N";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +266,10 @@ namespace Base64ToImage
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnProcess;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRemark;
     }
 }
 
