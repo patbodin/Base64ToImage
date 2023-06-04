@@ -35,7 +35,7 @@ namespace Base64ToImage
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtOutput = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -98,17 +98,19 @@ namespace Base64ToImage
             this.label3.TabIndex = 4;
             this.label3.Text = "Image Onput:";
             // 
-            // textBox2
+            // txtOutput
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox2.Location = new System.Drawing.Point(202, 310);
-            this.textBox2.MaxLength = 0;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(535, 26);
-            this.textBox2.TabIndex = 5;
+            this.txtOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtOutput.Location = new System.Drawing.Point(202, 310);
+            this.txtOutput.MaxLength = 0;
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.Size = new System.Drawing.Size(535, 26);
+            this.txtOutput.TabIndex = 5;
+            this.txtOutput.TextChanged += new System.EventHandler(this.txtOutput_TextChanged);
             // 
             // btnBrowse
             // 
+            this.btnBrowse.Enabled = false;
             this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnBrowse.Location = new System.Drawing.Point(756, 308);
             this.btnBrowse.Name = "btnBrowse";
@@ -116,9 +118,11 @@ namespace Base64ToImage
             this.btnBrowse.TabIndex = 6;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnSave.Location = new System.Drawing.Point(837, 308);
             this.btnSave.Name = "btnSave";
@@ -126,6 +130,7 @@ namespace Base64ToImage
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label4
             // 
@@ -170,6 +175,7 @@ namespace Base64ToImage
             this.btnProcess.TabIndex = 11;
             this.btnProcess.Text = "Process";
             this.btnProcess.UseVisualStyleBackColor = true;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
             // Form1
             // 
@@ -183,7 +189,7 @@ namespace Base64ToImage
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnBrowse);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
@@ -207,7 +213,7 @@ namespace Base64ToImage
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtOutput;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label4;
