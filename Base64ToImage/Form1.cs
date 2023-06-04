@@ -16,5 +16,15 @@ namespace Base64ToImage
         {
             InitializeComponent();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtInput.Clear();
+        }
+
+        private void txtInput_TextChanged(object sender, EventArgs e)
+        {
+            txtLength.Text = txtInput.Text.Trim().Count().ToString();
+        }
     }
 }
